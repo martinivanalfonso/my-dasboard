@@ -35,7 +35,7 @@ const Sidebar = () => {
               <span className="link-text">Home</span>
             </Link>
           </li>
-          <li className="nav-item">
+          <li className="nav-item item-active">
             <Link to="/dashboard" className="nav-link">
               <DashboardIcon />
               <span className="link-text">Dashboard</span>
