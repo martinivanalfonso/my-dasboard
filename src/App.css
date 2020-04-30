@@ -1,0 +1,10 @@
+:root {
+    font-size: 16px;
+    --bg-primary: #b6b6b6;
+    --bg-secondary: #ececec;
+    --text-primary: #23232e;
+    --text-secondary: #141418;
+    --transition-speed: 600ms;
+    --active: blue;
+    --bg: white;
+}
