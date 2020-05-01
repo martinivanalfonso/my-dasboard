@@ -13,6 +13,8 @@ import SettingsInputComponentIcon from "@material-ui/icons/SettingsInputComponen
 import SettingsBrightnessIcon from "@material-ui/icons/SettingsBrightness";
 import MenuIcon from "@material-ui/icons/Menu";
 
+import NavItem from "../nav-item/nav-item.component";
+
 const Sidebar = () => {
   const sidebarRef = useRef();
   const handleToggle = () => {
@@ -35,54 +37,30 @@ const Sidebar = () => {
               <span className="link-text">Home</span>
             </Link>
           </li>
-          <li className="nav-item item-active">
-            <Link to="/dashboard" className="nav-link">
-              <DashboardIcon />
-              <span className="link-text">Dashboard</span>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/dashboard" className="nav-link">
-              <SystemUpdateAltIcon />
-              <span className="link-text">Option</span>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/dashboard" className="nav-link">
-              <PermDataSettingIcon />
-              <span className="link-text">Option</span>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/dashboard" className="nav-link">
-              <CardTravelIcon />
-              <span className="link-text">Option</span>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/dashboard" className="nav-link">
-              <PolymerIcon />
-              <span className="link-text">Option</span>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/dashboard" className="nav-link">
-              <SettingsApplicationsIcon />
-              <span className="link-text">Option</span>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/dashboard" className="nav-link">
-              <SettingsInputComponentIcon />
-              <span className="link-text">Option</span>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/dashboard" className="nav-link">
-              <SettingsBrightnessIcon />
-              <span className="link-text">Mode</span>
-            </Link>
-          </li>
+          <NavItem title="Dashboard" link="/dashboard">
+            <DashboardIcon />
+          </NavItem>
+          <NavItem title="Option" link="/option1">
+            <SystemUpdateAltIcon />
+          </NavItem>
+          <NavItem title="Option" link="/option2">
+            <PermDataSettingIcon />
+          </NavItem>
+          <NavItem title="Option" link="/option3">
+            <CardTravelIcon />
+          </NavItem>
+          <NavItem title="Option" link="/option4">
+            <PolymerIcon />
+          </NavItem>
+          <NavItem title="Option" link="/option5">
+            <SettingsApplicationsIcon />
+          </NavItem>
+          <NavItem title="Option" link="/option6">
+            <SettingsInputComponentIcon />
+          </NavItem>
+          <NavItem title="Option" link="/option7">
+            <SettingsBrightnessIcon />
+          </NavItem>
         </ul>
       </div>
     </>
