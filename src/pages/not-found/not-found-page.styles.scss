@@ -15,3 +15,10 @@
     height: 100px;
 
   }
+
+  @media screen and (max-width: 600px) {
+    .not-found-wrapper {
+      margin: 0px;
+      width: 100%;
+    }
+  }

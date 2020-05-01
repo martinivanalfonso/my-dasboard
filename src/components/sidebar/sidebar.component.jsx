@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { Link } from "react-router-dom";
+import React, { useRef, useEffect } from "react";
+import { Link, useHistory } from "react-router-dom";
 import "./sidebar.styles.scss";
 
 import PersonIcon from "@material-ui/icons/Person";
@@ -17,10 +17,24 @@ import NavItem from "../nav-item/nav-item.component";
 
 const Sidebar = () => {
   const sidebarRef = useRef();
+  let history = useHistory();
   const handleToggle = () => {
     sidebarRef.current.style.visibility !== "visible"
       ? (sidebarRef.current.style.visibility = "visible")
       : (sidebarRef.current.style.visibility = "hidden");
+  };
+
+  useEffect(() => {
+    if (window.innerWidth < 600) sidebarRef.current.style.visibility = "hidden";
+  }, [history.location.pathname]);
+
+  const toggleColorMode = () => {
+    console.log(document.documentElement.getAttribute("color-mode"));
+    if (document.documentElement.getAttribute("color-mode") === "dark") {
+      document.documentElement.setAttribute("color-mode", "light");
+    } else {
+      document.documentElement.setAttribute("color-mode", "dark");
+    }
   };
   return (
     <>
@@ -58,9 +72,16 @@ const Sidebar = () => {
           <NavItem title="Option" link="/option6">
             <SettingsInputComponentIcon />
           </NavItem>
-          <NavItem title="Option" link="/option7">
-            <SettingsBrightnessIcon />
-          </NavItem>
+          <li className="nav-item">
+            <button
+              onClick={toggleColorMode}
+              className="nav-link"
+              aria-label="Toggle dark mode"
+            >
+              <SettingsBrightnessIcon />
+              <span className="link-text">Color Mode</span>
+            </button>
+          </li>
         </ul>
       </div>
     </>

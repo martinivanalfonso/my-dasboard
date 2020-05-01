@@ -1,13 +1,9 @@
-import React from 'react'
+import React from "react";
 
-import './app-wrapper.styles.scss'
+import "./app-wrapper.styles.scss";
 
-const AppWrapper = ({children}) => {
-    return(
-        <div className="app-wrapper">
-            {children}
-        </div>
-    )
-}
+const AppWrapper = ({ children }) => {
+  return <div className="app-wrapper">{children}</div>;
+};
 
-export default AppWrapper
+export default AppWrapper;
