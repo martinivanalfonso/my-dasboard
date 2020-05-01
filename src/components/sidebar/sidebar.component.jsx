@@ -30,7 +30,7 @@ const Sidebar = () => {
       <div className="sidebar" ref={sidebarRef}>
         <ul className="sidebar-nav">
           <li className="nav-item">
-            <Link to="/dashboard" className="nav-link">
+            <Link to="/" className="nav-link">
               <PersonIcon />
               <span className="link-text">Home</span>
             </Link>
