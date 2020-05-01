@@ -1,15 +1,18 @@
 import React from "react";
 import { Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { selectName } from "../../redux/user/user.selectors";
+import { createStructuredSelector } from "reselect";
 
 import "./right-sidebar.styles.scss";
 
-const RightSidebar = () => {
+const RightSidebar = ({ name }) => {
   return (
     <div className="right-sidebar-wrapper">
       <div className="right-sidebar-header">
         <div className="welcome-text">
-          <h4 className="username-text">Hi Martin</h4>
+          <h4 className="username-text">Hi {name}</h4>
           <Link to="/dashboard" className="company-text">
             AMCP Corp
           </Link>
@@ -29,4 +32,8 @@ const RightSidebar = () => {
   );
 };
 
-export default RightSidebar;
+const mapStateToProps = createStructuredSelector({
+  name: selectName,
+});
+
+export default connect(mapStateToProps)(RightSidebar);
