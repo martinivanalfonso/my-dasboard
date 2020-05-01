@@ -7,4 +7,5 @@
     --transition-speed: 600ms;
     --active: blue;
     --bg: white;
+    display:flex;
 }

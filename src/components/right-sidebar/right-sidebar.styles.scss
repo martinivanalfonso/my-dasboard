@@ -1,0 +1,41 @@
+.right-sidebar-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  width: 20%;
+  max-width: 400px;
+  background-color: var(--bg-secondary);
+}
+
+.welcome-profile-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  margin-left: 1rem;
+}
+
+.username-text {
+    margin:0px;
+}
+
+
+
+.right-sidebar-footer {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.right-sidebar-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+}
+@media screen and (max-width: 1200px) {
+  .right-sidebar-wrapper {
+    display: none;
+  }
+}
