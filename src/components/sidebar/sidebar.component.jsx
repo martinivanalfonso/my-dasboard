@@ -18,16 +18,20 @@ import NavItem from "../nav-item/nav-item.component";
 const Sidebar = () => {
   const sidebarRef = useRef();
   let history = useHistory();
+
+  //Handles mobile dropdown menu
   const handleToggle = () => {
     sidebarRef.current.style.visibility !== "visible"
       ? (sidebarRef.current.style.visibility = "visible")
       : (sidebarRef.current.style.visibility = "hidden");
   };
 
+  // Hides menu when page changes on mobile view
   useEffect(() => {
     if (window.innerWidth < 600) sidebarRef.current.style.visibility = "hidden";
   }, [history.location.pathname]);
 
+  // Checks html elemement in order to select the color mode, default mode is "light"
   const toggleColorMode = () => {
     console.log(document.documentElement.getAttribute("color-mode"));
     if (document.documentElement.getAttribute("color-mode") === "dark") {

@@ -4,6 +4,8 @@ import { Link, useHistory } from "react-router-dom";
 const NavItem = ({ children, link, title }) => {
   let history = useHistory();
   const itemRef = useRef();
+
+  // Checks current url location to determine which nav item is active
   useEffect(() => {
     const stringUrl = history.location.pathname;
     if (stringUrl === link) {
